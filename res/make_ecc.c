@@ -6,7 +6,8 @@
 #include <openssl/err.h>
 
 int main()
-{
+{	
+	int i_;
 	EC_KEY                *key1,*key2;
 	EC_POINT            *pubkey1,*pubkey2;
 	EC_GROUP           *group1,*group2;
@@ -130,6 +131,9 @@ int main()
 			printf("生成共享密钥成功\n");
 		else
 			printf("生成共享密钥失败\n");
+	}
+	for (i_ = 0; i_ < 128 ;i_++) {
+		printf("%x",shareKey2[i_]);
 	}
 	printf("test ok!\n");
 	BIO_free(berr);
